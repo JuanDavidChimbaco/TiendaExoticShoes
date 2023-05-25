@@ -21,22 +21,23 @@
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <header class="header rounded-top">
-            {%block encabezado%}
-            {%endblock%}
+    <div class="container-fluid">
+        <header class="row">
+            {% block encabezado %}
+            {% endblock %}
         </header>
-        <nav>
-            {%block menu%}
-            {%endblock%}
-        </nav>
-        <section>
-            {%block contenido%}
-            {%endblock%}
+        <div class="row sticky-top">
+            {% block menu %}
+            {% endblock %}
+        </div>
+        <section class="container" style="margin-bottom: 100px;">
+            {% block contenido %}
+                {%include "inicio.html" %}
+            {% endblock %}
         </section>
-        <footer class="rounded">
-            {%block piePagina%}
-            {%endblock%}
+        <footer class="row fixed-bottom">
+            {% block piePagina %}
+            {% endblock %}
         </footer>
     </div>
     <script src="/static/js/app.js"></script>
