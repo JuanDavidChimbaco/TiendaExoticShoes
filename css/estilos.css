@@ -1,0 +1,45 @@
+body{
+    background-attachment: fixed;
+    background-color: rgb(245, 205, 252);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+}
+/* Header */
+.titulo{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.subtitulo{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+/* Menu */
+div #menu{
+    background-color: rgb(249, 5, 172);
+}
+.nav-link{
+    color: black;
+}
+.nav-link {
+    transition: 0.5s;
+}
+.nav {
+    --bs-nav-link-hover-color: #f905ac;
+}
+.nav-link:focus, .nav-link:hover {
+    color:white;
+}
+.dropdown-menu {
+--bs-dropdown-link-active-bg: #f905ac;
+}
+/* footer */
+footer{
+    background-color: rgb(249, 5, 172);
+}
+a {
+    color: #000;
+    text-decoration: underline;
+}
+p {
+    color: #000;
+}
