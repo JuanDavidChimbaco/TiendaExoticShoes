@@ -1,15 +1,35 @@
 <div class="container">
-    <form action="" class="pt-5">
+    <form action="/php/agregarProducto.php" class="pt-5" method="post">
         <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">Email address</label>
+            <input type="text" class="form-control" id="floatingInput" placeholder="Nombre del Producto" name="txtNombre" required>
+            <label for="floatingInput">Nombre del Producto</label>
           </div>
           <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Password</label>
+            <input type="text" class="form-control" id="floatingPassword" placeholder="Descripcion" required>
+            <label for="floatingPassword">Descripcion</label>
+          </div>
+          <div class="form-floating">
+            <input type="number" class="form-control" id="floatingPassword" placeholder="Precio" required>
+            <label for="floatingPassword">Precio</label>
+          </div>
+          <div class="form-floating">
+            <input type="number" class="form-control" id="floatingPassword" placeholder="Cantidad en Inventario" required>
+            <label for="floatingPassword">Cantidad en Inventario</label>
+          </div>
+          <div class="form-floating">
+           
+            
+            <select name="categoria" id="categoria" required>
+                  <option value="">Seleccione Categoria</option>
+              <?php foreach ($categorias as $categoria): ?>
+                  <option value="<?php echo $categoria['id']; ?>"><?php echo $categoria['nombre']; ?></option>
+              <?php endforeach; ?>
+          </select>
+
+            
           </div>
           <div class="form-floating text-center">
-            <input type="submit" value="ENVIAR" class="btn btn-group pt-5">
+            <input type="submit" value="ENVIAR" class="btn btn-info mt-5" id="Enviar">
           </div>
     </form>
 </div>

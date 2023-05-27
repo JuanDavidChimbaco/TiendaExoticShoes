@@ -1,16 +1,10 @@
 // Carga el contenido de los componentes
-document.getElementById('header').innerHTML = loadComponent('/componentes/header.html');
-document.getElementById('menu').innerHTML = loadComponent('/componentes/menu.html');
-document.getElementById('seccion').innerHTML = loadComponent('/componentes/seccion.html');
-document.getElementById('footer').innerHTML = loadComponent('/componentes/footer.html');
+document.getElementById('header').innerHTML = loadComponent('/Tienda/componentes/header.html');
+document.getElementById('menu').innerHTML = loadComponent('/Tienda/componentes/menu.html');
+document.getElementById('seccion').innerHTML = loadComponent('/Tienda/componentes/seccion.html');
+document.getElementById('footer').innerHTML = loadComponent('/Tienda/componentes/footer.html');
 
 // Función para cargar el contenido de los componentes
-function loadComponent(url) {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', url, false);
-    xhr.send();
-    return xhr.responseText;
-}
 
 function agregarProductos(){
     document.getElementById('seccion').innerHTML = loadComponent('/procesos/agregarProductos.html')
@@ -26,7 +20,16 @@ function agregarCategorias(){
 function listarCategorias(){
     document.getElementById('seccion').innerHTML = loadComponent('/procesos/listarCategorias.html')
 }
+function listarPedidos(){
+    document.getElementById('seccion').innerHTML = loadComponent('/procesos/listarPedidos.html')
+}
 
 function inicio(){
     location.reload();
+}
+function loadComponent(url) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, false);
+    xhr.send();
+    return xhr.responseText;
 }
