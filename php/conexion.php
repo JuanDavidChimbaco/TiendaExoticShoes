@@ -9,7 +9,6 @@ $dbname = "tiendaexoticshoes"; // Nombre de la base de datos
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Conexión exitosa a la base de datos";
 } catch (PDOException $e) {
     die("La conexión falló: " . $e->getMessage());
 }
@@ -17,5 +16,4 @@ try {
 // Realizar operaciones con la base de datos...
 
 // Cerrar conexión
-$conn = null;
 ?>

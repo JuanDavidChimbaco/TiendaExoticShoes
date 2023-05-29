@@ -1,27 +1,59 @@
-<ul class="nav nav-tabs">
+<ul class="nav nav-tabs d-block text-center">
     <li class="nav-item">
-      <a class="nav-link active" aria-current="page" href="#" onclick="inicio()">Exotics Shoes</a>
+      <a class="nav-link active" aria-current="page" href="#" onclick="inicio()">Administrador</a>
     </li>
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Productos</a>
+    <li class="nav-item dropdown p-4">
+      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+        <i class="fa-solid fa-shirt fa-2xl"></i>
+        Productos
+      </a>
       <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#1" onclick="agregarProductos()">Agregar Productos</a></li>
+        <li>
+          <a class="dropdown-item" href="#" onclick="agregarProductos(), obtenerCategorias()">
+            <i class="fa-solid fa-plus fa-2xl"></i>
+            Agregar Productos
+          </a>
+        </li>
         <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="#2" onclick="listarProductos()">Listar Productos</a></li>
+        <li>
+          <a class="dropdown-item" href="#2" onclick="listarProductos(), listarProductosTabla()">
+            <i class="fa-solid fa-list-check fa-2xl"></i>
+            Listar Productos
+          </a>
+        </li>
       </ul>
     </li>
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Categorias</a>
+    <li class="nav-item dropdown p-4">
+      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+        <i class="fa-solid fa-boxes-packing fa-2xl"></i>
+        Categorias
+      </a>
       <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#" onclick="agregarCategorias()">Agregar Categorias</a></li>
+        <li>
+          <a class="dropdown-item" href="#" onclick="agregarCategorias()">
+            <i class="fa-solid fa-plus fa-2xl"></i>
+            Agregar Categorias
+          </a>
+          </li>
         <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="#" onclick="listarCategorias()">Listar Categorias</a></li>
+        <li>
+          <a class="dropdown-item" href="#" onclick="listarCategorias()">
+            <i class="fa-solid fa-list-check fa-2xl"></i>
+            Listar Categorias
+          </a>
+        </li>
       </ul>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#" onclick="listarPedidos()">Lista Pedidos</a>
+    <li class="nav-item p-4">
+      <a class="nav-link" href="#" onclick="listarPedidos()">
+        <i class="fa-solid fa-list fa-2xl"></i>
+        Lista Pedidos
+      </a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Lista Clientes</a>
+    <li class="nav-item p-4">
+      <a class="nav-link" href="#" onclick="listarClientes()">
+        <i class="fa-solid fa-address-book fa-2xl"></i>
+        Lista Clientes
+      </a>
     </li>
   </ul>

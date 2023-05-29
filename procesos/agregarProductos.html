@@ -1,35 +1,32 @@
 <div class="container">
-    <form action="/php/agregarProducto.php" class="pt-5" method="post">
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingInput" placeholder="Nombre del Producto" name="txtNombre" required>
-            <label for="floatingInput">Nombre del Producto</label>
-          </div>
-          <div class="form-floating">
-            <input type="text" class="form-control" id="floatingPassword" placeholder="Descripcion" required>
-            <label for="floatingPassword">Descripcion</label>
-          </div>
-          <div class="form-floating">
-            <input type="number" class="form-control" id="floatingPassword" placeholder="Precio" required>
-            <label for="floatingPassword">Precio</label>
-          </div>
-          <div class="form-floating">
-            <input type="number" class="form-control" id="floatingPassword" placeholder="Cantidad en Inventario" required>
-            <label for="floatingPassword">Cantidad en Inventario</label>
-          </div>
-          <div class="form-floating">
-           
-            
-            <select name="categoria" id="categoria" required>
-                  <option value="">Seleccione Categoria</option>
-              <?php foreach ($categorias as $categoria): ?>
-                  <option value="<?php echo $categoria['id']; ?>"><?php echo $categoria['nombre']; ?></option>
-              <?php endforeach; ?>
-          </select>
+  <form action="../php/agregarProducto.php" class="pt-5" method="post">
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingInput" placeholder="Nombre del Producto" name="txtNombre"
+        required>
+      <label for="floatingInput">Nombre del Producto</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingDescripcion" placeholder="Descripcion" name="txtDescripcion"
+        required>
+      <label for="floatingDescripcion">Descripcion</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="number" class="form-control" id="floatingPrecio" placeholder="Precio" name="txtPrecio" required>
+      <label for="floatingPrecio">Precio</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="number" class="form-control" id="floatingCantidad" placeholder="Cantidad en Inventario"
+        name="txtCantidad" required>
+      <label for="floatingCantidad">Cantidad en Inventario</label>
+    </div>
+    <div class="form-floating">
+      <select name="categoria" id="CategoriaProducto" class="form-control" name="cbCategoria" required>
+        <option value="">Seleleccione Categoria</option>
 
-            
-          </div>
-          <div class="form-floating text-center">
-            <input type="submit" value="ENVIAR" class="btn btn-info mt-5" id="Enviar">
-          </div>
-    </form>
+      </select>
+    </div>
+    <div class="form-floating text-center">
+      <input type="submit" value="ENVIAR" class="btn btn-info mt-5" id="Enviar">
+    </div>
+  </form>
 </div>

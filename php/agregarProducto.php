@@ -1,12 +1,30 @@
 <?php 
-include 'conexion.php';
+require_once '../php/conexion.php';
 
-// Consulta para obtener las categorías
-$sql = "SELECT id, nombre FROM categorias";
-$stmt = $conn->query($sql);
+$nombre = $_POST['txtNombre'];
+$descripcion = $_POST['txtDescripcion'];
+$precio = $_POST['txtPrecio'];
+$cantidad = $_POST['txtCantidad'];
+$categoria = $_POST['categoria'];
 
-// Obtener los resultados de la consulta
-$categorias = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+try{
+     // Insertar los datos en la base de datos
+     $sql = "INSERT INTO productos VALUES (null,:nombre, :descripcion, :precio, :cantidad, :categoria)";
+     $stmt = $conn->prepare($sql);
+     $stmt->bindParam(':nombre', $nombre);
+     $stmt->bindParam(':descripcion', $descripcion);
+     $stmt->bindParam(':precio', $precio);
+     $stmt->bindParam(':cantidad', $cantidad);
+     $stmt->bindParam(':categoria', $categoria);
+     $stmt->execute();
+  
+    echo "Datos ingresados correctamente" ; 
+    echo "";
+    echo ' <a href="../Administrador/index.html" class="btn btn-success"> Volver</a>';
+
+}catch (PDOException $e){
+    echo ("Error en la consulta: " . $e->getMessage());
+}
 
 ?>
