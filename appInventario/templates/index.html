@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <!-- Hoja de estilos local -->
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+    <!-- bootstrap 5.3 -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+    <title>Exotic Shoes</title>
+</head>
+
+<body>
+    <div class="containerMain">
+        <!-- boton llamando al modal -->
+        <a class="btnInicio" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Iniciar Sesión</a>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Cabecera del Modal -->
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Inicio de Sesion</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Contenido del Modal -->
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="usuario">
+                        <label for="floatingInput">Usuario</label>
+                      </div>
+                      <div class="form-floating">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="contraseña">
+                        <label for="floatingPassword">Contraseña</label>
+                      </div>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <a type="button" class="btn btn-success" href="">Iniciar Sesion</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
