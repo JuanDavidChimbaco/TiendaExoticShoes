@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Exotic Shoes</title>
+
+    <!-- bootstrap 5.3 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- font awaisome -->
+    <script src="https://kit.fontawesome.com/6bf421ec3d.js" crossorigin="anonymous"></script>
+
+    <!-- axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!-- locales -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+        <div class=" bg-dark text-center text-white">
+            <span>Exotic Shoes</span>
+            <i class="fa-solid fa-shirt fa-beat"></i>
+        </div>
+    </header>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-secondary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="assets/img/exoticshoes.jpg" alt="Logo" class="rounded-circle"
+                    width="64px" height="64px"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#"><i
+                                class="fa-solid fa-house-chimney fa-beat-fade"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#collapseExample" role="button"
+                            aria-expanded="false" aria-controls="collapseExample"><i
+                                class="fa-solid fa-shirt fa-flip"></i>Productos</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Categorias
+                        </a>
+                        <ul class="dropdown-menu" id="categorias">
+                            <!-- categorias -->
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa-solid fa-boxes-stacked fa-beat"></i>Ofertas</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                <ul class="navbar-nav mb-2 mx-2">
+                    <button class="btn btn-outline-dark" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i
+                            class="fa-solid fa-cart-shopping fa-bounce"></i></button>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- todos los productos -->
+    <section>
+        <div class="collapse" id="collapseExample">
+                <div class="row d-flex justify-content-center" id="productos">
+                    <!-- contenido -->
+                </div>
+            </div>
+    </section>
+
+    <!-- slider -->
+    <section>
+        <div>
+            <div id="carouselExampleIndicators" class="carousel slide">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="assets/img/slider1.jpg" class="d-block w-100" alt="..." height="500px">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/slider2.jpg" class="d-block w-100" alt="..." height="500px">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/img/slider3.jpg" class="d-block w-100" alt="..." height="500px">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+
+    </footer>
+
+    <!-- offcanvas -->
+    <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+        aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Carrito <i
+                    class="fa fa-sharp fa-solid fa-cart-shopping fa-bounce"></i></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <!-- productos -->
+            <p> </p>
+        </div>
+    </div>
+
+    <!-- Modal detalle productos -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fs-1" id="exampleModalLabel">Detalle del Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <div id="detalleProducto" class="p-3">
+                        <!-- contenido -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- boton para ajustar vista -->
+    <a href="#" class="scroll-to-top" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- scripts -->
+    <script src="assets/js/scripts.js"></script>
+</body>
+
+</html>
