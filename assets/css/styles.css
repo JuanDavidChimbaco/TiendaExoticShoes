@@ -5,6 +5,10 @@
     max-width: 30%;
 }
 
+.page-item{
+  cursor: pointer;
+}
+
 .scroll-to-top {
     position: fixed;
     bottom: 20px;
