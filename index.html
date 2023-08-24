@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda Exotic Shoes</title>
 
+    <!-- jQuery 3.7.0 -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+
     <!-- bootstrap 5.3 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
@@ -65,12 +68,11 @@
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
                 </form>
                 <ul class="navbar-nav mb-2 mx-2">
                     <button class="btn btn-outline-dark" type="button" data-bs-toggle="offcanvas"
-                        data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i
+                        data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" onclick="pintarCarrito()"><i
                             class="fa-solid fa-cart-shopping fa-bounce"></i></button>
                 </ul>
             </div>
@@ -80,7 +82,7 @@
     <!-- todos los productos -->
     <section>
         <div class="collapse" id="collapseExample">
-                <div class="row d-flex justify-content-center" id="productos">
+                <div class="row d-flex justify-content-center" id="TodosProductos">
                     <!-- contenido -->
                 </div>
                 <div id="paginationContainer">
@@ -151,8 +153,26 @@
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-            <!-- productos -->
-            <p> </p>
+            <div id="carritoDeProductos">
+                <!-- productos -->
+            </div>
+        </div>
+        <div class="offcanvas-bottom">
+            <div class="container">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-4">
+                        <h5>Total: $<span id="total"></span></h5>
+                    </div>
+                    <div class="col-4">
+                        <button class="btn btn-outline-success" type="button" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">Comprar</button>
+                    </div>
+                    <div class="col-4">
+                        <button class="btn btn-outline-danger" type="button" onclick="vaciarCarrito()">Vaciar
+                            Carrito</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

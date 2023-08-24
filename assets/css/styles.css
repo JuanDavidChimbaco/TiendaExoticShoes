@@ -28,3 +28,24 @@
   .scroll-to-top:hover {
     opacity: 1;
   }
+
+p{
+  color: forestgreen;
+  background-color: aliceblue;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.delete-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.delete-button i {
+  color: red;
+  font-size: 1.5rem;
+}
