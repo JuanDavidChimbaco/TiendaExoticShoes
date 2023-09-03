@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Zapatos Exóticos</title>
+    <!-- Incluir la biblioteca Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        .card {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            width: 300px;
+            display: inline-block;
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Tienda de Zapatos Exóticos</h1>
+        <div class="card" v-for="product in products" :key="product.id">
+            <h2>{{ product.nombre }}</h2>
+            <div>
+                <img :src="baseurl+product.foto" :alt="product.foto" width="200">
+            </div>
+            <p>Precio: ${{ product.precio }}</p>
+            <p>Descripción: {{ product.descripcion }}</p>
+        </div>
+    </div>
+
+    <script>
+        // Crear una instancia de Vue
+        new Vue({
+            el: '#app',
+            data: {
+                products: [],
+                baseurl: "https://exoticshoes.pythonanywhere.com/"
+            },
+            mounted() {
+                // Cargar productos al montar la aplicación
+                this.fetchProducts();
+            },
+            methods: {
+                // Función para obtener y mostrar los productos
+                async fetchProducts() {
+                    try {
+                        const response = await axios.get('https://exoticshoes.pythonanywhere.com/productos/');
+                        this.products = response.data;
+                        console.log(response.data);
+                    } catch (error) {
+                        console.error('Error al obtener los productos:', error);
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
